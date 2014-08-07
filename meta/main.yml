@@ -1,0 +1,24 @@
+---
+
+dependencies:
+
+  - { role: elao.mongodb-server }
+  - { role: elao.mongodb-php }
+  - { role: elao.project-php,
+      name: rockmongo,
+      root: '/opt/rockmongo' }
+
+galaxy_info:
+
+  author:              elao
+  description:         A RockMongo server role for elao symfony standard vagrant box
+  company:             elao
+  license:             MIT
+  min_ansible_version: 1.7.0
+  platforms:
+    - name: Debian
+  versions:
+    - wheezy
+  categories:
+    - development
+    - web

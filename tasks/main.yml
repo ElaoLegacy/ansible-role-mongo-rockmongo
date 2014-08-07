@@ -1,0 +1,20 @@
+---
+
+- name: install
+  shell: >
+    wget https://codeload.github.com/iwind/rockmongo/zip/1.1.7 -O /tmp/rockmongo.zip && unzip -o /tmp/rockmongo.zip -d /opt && rm /tmp/rockmongo.zip
+    creates=/opt/rockmongo-1.1.7
+  sudo: yes
+
+- name: move
+  shell: >
+    mv /opt/rockmongo-1.1.7 /opt/rockmongo
+    creates=/opt/rockmongo
+  sudo: yes
+
+- name: config control auth
+  replace: >
+    dest=/opt/rockmongo/config.php
+    regexp='^\$MONGO\["servers"\]\[\$i\]\["control_auth"\]\s=\strue'
+    replace='$MONGO["servers"][$i]["control_auth"] = false;//enable control users, works only if mongo_auth=false'
+  sudo: yes
