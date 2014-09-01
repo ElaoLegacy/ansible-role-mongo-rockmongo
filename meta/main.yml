@@ -5,9 +5,11 @@ dependencies:
   - { role: elao.base }
   - { role: elao.mongodb-server }
   - { role: elao.mongodb-php }
-  - { role: elao.project-php,
-      name: rockmongo,
-      root: '/opt/rockmongo' }
+  - { role: elao.project,
+    elao_projects: {
+      rockmongo: { type: php, host: '{{ elao_rockmongo_host }}', root: '/opt/rockmongo' }
+    }
+  }
 
 galaxy_info:
 
