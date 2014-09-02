@@ -13,7 +13,7 @@ This role only run on elao symfony standard vagrant box. See https://vagrantclou
 Role Variables
 --------------
 
-    elao_rockmongo_host: rockmongo  # RockMongo host
+    elao_mongo_rockmongo_host: rockmongo  # RockMongo host
 
 
 Example Playbook

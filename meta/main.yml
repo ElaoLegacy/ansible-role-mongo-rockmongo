@@ -3,11 +3,11 @@
 dependencies:
 
   - { role: elao.base }
-  - { role: elao.mongodb-server }
-  - { role: elao.mongodb-php }
+  - { role: elao.mongo-server }
+  - { role: elao.mongo-php }
   - { role: elao.project,
     elao_projects: {
-      rockmongo: { type: php, host: '{{ elao_rockmongo_host }}', root: '/opt/rockmongo' }
+      rockmongo: { type: php, host: '{{ elao_mongo_rockmongo_host }}', root: '/opt/rockmongo' }
     }
   }
 
